@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+    <form id="formulario" action="Practica/contador/" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <input name="resetear" type="reset" value="Reset">
+        <input name="ejecutar" type="submit" value="Execute">
+    </form>
+    <p name="resultado">{{mensaje}}</p>
+    <label name="dia">{{dia}}</label>
+    <p name="base_datos">{{base_datos}}</p>
+</body>
+</html>
