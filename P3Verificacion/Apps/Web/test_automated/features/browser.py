@@ -17,8 +17,8 @@ def open_drivers():
     world.driver.maximize_window()
 
 def get_chrome():
-    driver = webdriver.Chrome(r'C:\Users\migue\Documents\Verificacion programas\chromedriver.exe')
-    #driver = webdriver.Chrome()
+    #driver = webdriver.Chrome(r'C:\Users\migue\Documents\Verificacion programas\chromedriver.exe')
+    driver = webdriver.Chrome()
     return driver
 
 def close_drivers():
