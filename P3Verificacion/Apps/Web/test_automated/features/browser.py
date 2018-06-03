@@ -18,7 +18,7 @@ def open_drivers():
 
 def get_chrome():
     #driver = webdriver.Chrome(r'C:\Users\migue\Documents\Verificacion programas\chromedriver.exe')
-    driver = webdriver.Chrome(r './chromedriver')
+    driver = webdriver.Chrome(r '~/proyectos/P4_Final_Verificacion/P3Verificacion/Apps/Web/test_automated/features/chromedriver')
     return driver
 
 def close_drivers():
