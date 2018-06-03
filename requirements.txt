@@ -1,8 +1,6 @@
 django 
-
 aloe
 aloe-django
-
 nose 
 django-nose
 django-nose-selenium
