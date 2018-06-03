@@ -5,3 +5,7 @@ nose
 django-nose
 django-nose-selenium
 selenium 
+beautifulsoup4
+requests
+datetime
+redis
