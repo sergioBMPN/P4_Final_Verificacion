@@ -13,7 +13,7 @@ Esta web deberá de tener un formulario muy sencillo con:
     
 El funcionamiento de la web es sencillo:
 -   Si el usuario pulsa el botón Reset todo el texto que haya en textfield deberá de desaparecer. En caso de que no hubiera texto escrito el botón Reset no deberá de hacer nada.
--   Si el usuario pulsa el botón Execute y hay texto, la web deberá de mostrar por pantalla un listado con las palabras y el número de apariciones ordenadas de mayor a menor y, de igual forma, deberá de borrarse el texto que aparece en el textfield. En caso de que no hubiera ningún texto el botón no tendrá ningún efecto.
+-   Si el usuario pulsa el botón Execute y hay texto, la web deberá de mostrar por pantalla un listado con las palabras y el número de apariciones ordenadas de mayor a menor, por otro lado, mostrará por pantalla otro listado con las palabras y el número de apariciones ordenadas de mayor a menor que se encuentren en BBDD a lo largo de ese día y, de igual forma, deberá de borrarse la URL que aparece en el charfield. En caso de que no hubiera ninguna URL el botón no tendrá ningún efecto.
 
 ## Software
 Hemos utilizado las mismas [librerias] para python, además hemos implementado una base de datos en [Redis] para almacenar las palabras mas repetidas, por ultimo, utilizamos [Jenkins] para la integración continua y [ngrok] para levantar el servicio de jenkins.
