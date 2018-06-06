@@ -57,7 +57,7 @@ En esta practica hemos trabajado con Python 3.6, por este motivo, aunque se pedi
 4. [Miguel Olmedo]
 
 ## Version
-    V2.0
+    V1.0
 
 [Sergio Blanco]: https://github.com/sergioBMPN
 [Sergio Cuesta]:https://github.com/scj300
