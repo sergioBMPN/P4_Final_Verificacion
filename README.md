@@ -31,7 +31,7 @@ Una vez hecho esto, hemos configurado el repositorio de Github, en el apartado s
 4. [Miguel Olmedo]
 
 ## Version
-    V1.2
+    V1.1
 [Sergio Blanco]: https://github.com/sergioBMPN
 [Sergio Cuesta]:https://github.com/scj300
 [Miguel Muñiz]: https://github.com/miguelmuniz46
