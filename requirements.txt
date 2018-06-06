@@ -1,8 +1,11 @@
-django
+django 
 aloe
 aloe-django
 nose 
 django-nose
 django-nose-selenium
-selenium
-numpy
+selenium 
+beautifulsoup4
+requests
+datetime
+redis
