@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
 from .forms import formulario
 from .strings_example import StringsExamples
+import numpy as np
 import requests
 from bs4 import BeautifulSoup
 import redis
@@ -17,8 +18,15 @@ def contador(request):
         form = formulario(request.POST)
         if form.is_valid():
             pagina = form.cleaned_data['pagina']
-            conector = requests.get(pagina)
-            statusCode = conector.status_code
+            dia_consultar = form.cleaned_data['dia_consultar']
+
+            try:
+                conector = requests.get(pagina)
+                statusCode = conector.status_code
+            except (requests.HTTPError, requests.exceptions.MissingSchema):
+                form = formulario()
+                return render(request, 'contador.html', {'mensaje': "URL no valida", 'dia': "", 'base_datos': "", 'form': form})
+
 
             if statusCode == 200:
                 htmlText = conector.text
@@ -32,16 +40,32 @@ def contador(request):
 
                 tiempo = datetime.datetime.now()
                 dia = tiempo.day
-                year = tiempo.year
-                fecha_actual = str(dia) + "_" + str(year)
+                month = tiempo.month
+                fecha_actual = str(dia) + "_" + str(month)
 
                 bbdd = redis.Redis(host='localhost', port=6379)
 
                 introducirBBDD(bbdd, resultado, fecha_actual)
-                base_datos = consultar_contador_dia(bbdd, fecha_actual)
+
+
+                dias = np.arange(1, 31, 1)
+                meses = np.arange(1, 12, 1)
+
+                try:
+                    dia = dia_consultar.split("_")[0]
+                    mes = dia_consultar.split("_")[1]
+                except (IndexError, TypeError, ValueError):
+                    form = formulario()
+                    return render(request, 'contador.html', {'mensaje': "", 'dia': "", 'base_datos': "Valor no valido de dia_mes", 'form': form})
+
+
+                if((int(dia) in dias) and (int(mes) in meses)):
+                    base_datos = consultar_contador_dia(bbdd, dia_consultar)
+                else :
+                    base_datos = "El formato dia_mes no es el adecuado"
 
                 form = formulario()
-                fecha = "Contenido en la db del dia "+str(dia)+" del "+str(year)
+                fecha = "Contenido en la db del dia "+str(dia)+" del "+str(mes)
                 return render(request, 'contador.html', {'mensaje': resultado, 'dia': fecha ,'base_datos': base_datos,'form': form})
             else:
                 form = formulario()
@@ -80,6 +104,7 @@ def eliminar_tildes(palabra):
     s = ''.join((c for c in unicodedata.normalize('NFD', palabra) if unicodedata.category(c) != 'Mn'))
     return s
 
+
 def consultar_contador_dia(bbdd, fecha_actual):
     dias = bbdd.lrange("Dias", 0, -1)
     existe = False
@@ -89,7 +114,7 @@ def consultar_contador_dia(bbdd, fecha_actual):
             existe = True
 
     if(existe):
-        total = bbdd.zrevrangebyscore(fecha_actual, 2000, 0, None, None, True, int)
+        total = bbdd.zrevrangebyscore(fecha_actual, "+inf", 0, None, None, True, int)
 
         dicResultado = {}
 
