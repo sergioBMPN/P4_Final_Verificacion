@@ -17,9 +17,9 @@ def open_drivers():
     world.driver.maximize_window()
 
 def get_chrome():
-    #driver = webdriver.Chrome(r'C:\Users\migue\Documents\Verificacion programas\chromedriver.exe')
-    #driver = webdriver.Chrome(r'C:\Users\Sergio\Downloads\chromedriver.exe')
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome(r'C:\Users\Sergio\Downloads\P4_Final_Verificacion\P3Verificacion\Apps\Web\test_automated\features\chromedriver.exe')
+    #driver = webdriver.Chrome(r'C:\\Users\\Sergio\\Downloads\\chromedriver.exe')
+    #driver = webdriver.Firefox()
     return driver
 
 def close_drivers():
