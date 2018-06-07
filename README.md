@@ -11,7 +11,7 @@ Partiendo de [la practica anterior] se pide desarrollar:
 
 Esta web deberá de tener un formulario muy sencillo con:
 
--   Un textfield en el que podrás escribir una URL
+-   Un textfield en el que podrás escribir una URL y otro para buscar una fecha en la base de datos indicando dia y mes
 -   Dos botones:
     -   Reset: borra todo lo que haya en el textfield
     -   Execute: Arranca el proceso que habéis hecho de cálculo de palabras
