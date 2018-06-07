@@ -37,7 +37,9 @@ Una vez hecho esto, hemos configurado el repositorio de Github, en el apartado s
 
 ## Version
     V1.6
-
+## Video
+    https://youtu.be/gL8VuVwbEtk
+    
 [Sergio Blanco]: https://github.com/sergioBMPN
 [Sergio Cuesta]:https://github.com/scj300
 [Miguel Muñiz]: https://github.com/miguelmuniz46
