@@ -38,7 +38,7 @@ Una vez hecho esto, hemos configurado el repositorio de Github, en el apartado s
 ## Version
     V1.6
 ## Video
-    [video de la defensa]
+   [video de la defensa]
     
 [Sergio Blanco]: https://github.com/sergioBMPN
 [Sergio Cuesta]:https://github.com/scj300
