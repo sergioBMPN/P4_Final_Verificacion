@@ -1,4 +1,9 @@
 # P4 Final Verificacion
+## Revisión prácticas anteriores
+- Práctica 2: hemos corregido el problema que teníamos en los test unitarios de únicamente recibir un texto vacío y el otro caso que                    teníamos pendiente, que era el de recibir exclusivamente stopwords. Por otro lado, hemos eliminado los espacios que                      teníamos en la cadena de palabras.
+
+- Práctica 3: hemos cambiado el idioma de los steps en inglés, ya que teníamos redundancias en los mismos al ponerlos en castellano.
+
 ## Enunciado
 Partiendo de [la practica anterior] se pide desarrollar:
 -  Herramienta web que conste de una forma de, introducida una url de una fuente de información (periódico, revista, blog…), acceda al texto del artículo y muestre de manera ordenada las palabras utilizadas.
